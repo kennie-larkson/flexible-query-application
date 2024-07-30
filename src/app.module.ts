@@ -19,9 +19,15 @@ import { Data } from './searchUtility/search.data.entity';
         const environment = process.env.NODE_ENV;
         return {
           type: 'postgres',
+          host: configService.get('DB_HOST'),
+          port: parseInt(configService.get('DB_PORT')),
+          username: configService.get('DB_USER'),
+          password: configService.get('DB_PASSWORD'),
+          database: configService.get('DB_NAME'),
           url: process.env.DEV_DB_URL,
           entities: [Data],
           synchronize: environment == 'development' ? true : false,
+          ssl: true,
         };
       },
     }),
