@@ -16,10 +16,11 @@ The OpenAPI documentation will be available at the address `localhost:your-port/
 
 This query application accepts a number of query parameters, while some are compulsory others are not:
 
-- limit (compulsory)
-- page (compulsory)
-- sort (not compulsory)
-- filters (not compulsory)
+- limit (compulsory), sample: limit=3
+- page (compulsory), sample: page=0
+- sort (not compulsory), sample sort= id:asc
+- filters (not compulsory), sample filters= name:like:Conference
+- example query url:`localhost:5000/api/rooms?page=0&sort=capacity:asc&filters=name:like:Conference&limit=5`
 
 The maximum number of returned items have been pegged to 5
 
