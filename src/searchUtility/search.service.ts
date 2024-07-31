@@ -3,7 +3,7 @@ import { Data } from './search.data.entity';
 import { Repository } from 'typeorm';
 import { InjectRepository } from '@nestjs/typeorm';
 import { sampleData } from './sample-data';
-import { getWhere, getOrder } from 'src/helpers';
+import { getWhere, getOrder } from './../helpers';
 import {
   Pagination,
   Sorting,
