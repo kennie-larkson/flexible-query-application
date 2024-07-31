@@ -18,8 +18,8 @@ export default async function bootstrap() {
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
-  await app.listen(port).then(() => {
-    console.log(`Application listening for HTTP request on port:${port} ...`);
+  await app.listen(5019).then(() => {
+    console.log(`Application listening for HTTP request on port:5019 ...`);
   });
 }
 

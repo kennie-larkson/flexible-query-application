@@ -29,8 +29,8 @@ function bootstrap() {
             .build();
         const document = swagger_1.SwaggerModule.createDocument(app, config);
         swagger_1.SwaggerModule.setup('api', app, document);
-        yield app.listen(port).then(() => {
-            console.log(`Application listening for HTTP request on port:${port} ...`);
+        yield app.listen(5019).then(() => {
+            console.log(`Application listening for HTTP request on port:5019 ...`);
         });
     });
 }
