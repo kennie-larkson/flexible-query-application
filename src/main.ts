@@ -3,7 +3,7 @@ import { ConfigService } from '@nestjs/config';
 import { SwaggerModule, DocumentBuilder } from '@nestjs/swagger';
 import { AppModule } from './app.module';
 
-async function bootstrap() {
+export default async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const configService = app.get<ConfigService>(ConfigService);
   const port = configService.get('PORT') || 9000;
@@ -22,4 +22,3 @@ async function bootstrap() {
     console.log(`Application listening for HTTP request on port:${port} ...`);
   });
 }
-export default bootstrap();
