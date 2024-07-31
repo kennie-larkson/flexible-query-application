@@ -9,7 +9,6 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.default = bootstrap;
 const core_1 = require("@nestjs/core");
 const config_1 = require("@nestjs/config");
 const swagger_1 = require("@nestjs/swagger");
