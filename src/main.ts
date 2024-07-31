@@ -22,4 +22,4 @@ async function bootstrap() {
     console.log(`Application listening for HTTP request on port:${port} ...`);
   });
 }
-export default bootstrap();
+export default bootstrap;
