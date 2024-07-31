@@ -5,17 +5,24 @@
   "author": "Abdulrafiu Kehinde Lawal",
   "main": "dist/src/main.js",
   "scripts": {
-    "build": "rimraf dist && tsc && ls dist",
+    "build": "rimraf dist && tsc ",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "start": "node dist/src/main.js",
+    "start": "node --exec ts-node main.ts",
     "start:dev": "env NODE_ENV=development nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/src/main",
     "lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:cov": "jest --coverage"
+    "test:cov": "jest --coverage",
+    "ts.check": "tsc --project tsconfig.json",
+    "add-build": "git add dist"
   },
+  "pre-commit": [
+    "ts.check",
+    "build",
+    "add-build"
+  ],
   "dependencies": {
     "@nestjs/common": "^9.0.0",
     "@nestjs/config": "^3.2.3",
