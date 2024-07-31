@@ -18,7 +18,7 @@ function bootstrap() {
     return __awaiter(this, void 0, void 0, function* () {
         const app = yield core_1.NestFactory.create(app_module_1.AppModule);
         const configService = app.get(config_1.ConfigService);
-        const port = configService.get('PORT') || 9000;
+        const port = 9000;
         //app.useGlobalPipes(new ValidationPipe({}));
         const config = new swagger_1.DocumentBuilder()
             .addBearerAuth() // this decorator specifies the Bearer Authentication security mechanism for the API documentation
