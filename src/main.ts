@@ -6,7 +6,7 @@ import { AppModule } from './app.module';
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
   const configService = app.get<ConfigService>(ConfigService);
-  const port = 9000;
+  const port = configService.get<string>('PORT');
 
   //app.useGlobalPipes(new ValidationPipe({}));
   const config = new DocumentBuilder()
@@ -18,8 +18,8 @@ async function bootstrap() {
     .build();
   const document = SwaggerModule.createDocument(app, config);
   SwaggerModule.setup('api', app, document);
-  await app.listen(5019).then(() => {
-    console.log(`Application listening for HTTP request on port:5019 ...`);
+  await app.listen(port).then(() => {
+    console.log(`Application listening for HTTP request on port:${port} ...`);
   });
 }
 

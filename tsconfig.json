@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "module": "NODENEXT",
-    "moduleResolution": "NODENEXT",
+    "moduleResolution": "NodeNext",
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true,
     "target": "ES6",
@@ -16,7 +16,5 @@
     // "strictBindCallApply": false,
     //"forceConsistentCasingInFileNames": false
     // "noFallthroughCasesInSwitch": false
-  },
-  "include": ["./**/*"],
-  "exclude": ["node_modules"]
+  }
 }

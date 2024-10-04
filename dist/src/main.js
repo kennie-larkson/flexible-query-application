@@ -17,7 +17,7 @@ function bootstrap() {
     return __awaiter(this, void 0, void 0, function* () {
         const app = yield core_1.NestFactory.create(app_module_1.AppModule);
         const configService = app.get(config_1.ConfigService);
-        const port = 9000;
+        const port = configService.get('PORT');
         //app.useGlobalPipes(new ValidationPipe({}));
         const config = new swagger_1.DocumentBuilder()
             .addBearerAuth() // this decorator specifies the Bearer Authentication security mechanism for the API documentation
@@ -28,8 +28,8 @@ function bootstrap() {
             .build();
         const document = swagger_1.SwaggerModule.createDocument(app, config);
         swagger_1.SwaggerModule.setup('api', app, document);
-        yield app.listen(5019).then(() => {
-            console.log(`Application listening for HTTP request on port:5019 ...`);
+        yield app.listen(port).then(() => {
+            console.log(`Application listening for HTTP request on port:${port} ...`);
         });
     });
 }

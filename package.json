@@ -5,9 +5,9 @@
   "author": "Abdulrafiu Kehinde Lawal",
   "main": "dist/src/main.js",
   "scripts": {
-    "build": "rimraf dist && tsc ",
+    "build": "nest build ",
     "format": "prettier --write \"src/**/*.ts\" \"test/**/*.ts\"",
-    "start": "node dist/src/main.js",
+    "start": "nest start",
     "start:dev": "env NODE_ENV=development nest start --watch",
     "start:debug": "nest start --debug --watch",
     "start:prod": "node dist/src/main",
